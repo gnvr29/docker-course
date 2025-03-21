@@ -67,6 +67,10 @@ app.get('/people', async (req, res) => {
   }
 });
 
+/*create a network with docker network create and build the db container based on the mongo img.
+Then, use inspect to check the ip address of that db and use it here. 
+Use --network (network-name) in the docker run command to add the same network for the db container
+and the app container*/
 mongoose.connect(
   'mongodb://localhost:27017/swfavorites',
   { useNewUrlParser: true },
